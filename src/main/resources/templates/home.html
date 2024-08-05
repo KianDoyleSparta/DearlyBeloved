@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Images from Dropbox</h1>
+<div th:each="image : ${images}" style="display: flex">
+    <img th:src="'data:image/jpeg;base64,' + ${image}" alt="Image" width="200px"/>
+</div>
+</body>
+</html>
