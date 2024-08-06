@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
-<body>
 
+<body>
+<nav th:replace="~{fragments/nav}"></nav>
+
+<div th:replace="~{fragments/background}"></div>
+
+<div  id="content-2"  class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4 about-headshot-wrapper">
+            <img src="/lezli-face.jpg" alt="headshot" class="img-fluid">
+        </div>
+        <div class="col-md-6 about-info-wrapper">
+            <p>
+                Hey there, I&apos;m Lezli - a passionate photographer with a love for all things alternative and unique. My lens is my way of capturing the world through a different perspective, and I&apos;m thrilled to have you join me on this visual journey.
+                <br><br>
+                I&apos;ve always found beauty in the unconventional, the offbeat, and the extraordinary. From vibrant cityscapes to intimate portraits, my goal is to showcase the world&apos;s hidden wonders and celebrate individuality. With a background deeply rooted in alternative culture, I&apos;ve developed an eye for those fleeting moments that speak volumes.
+                <br><br>
+                Photography, to me, is more than just snapping pictures; it&apos;s a way of freezing emotions, stories, and memories in time. Each image I capture tells a story, and I&apos;m excited to work with you to bring your own narrative to life. Whether it&apos;s a daring fashion shoot, an edgy music event, or a personal portrait session, I&apos;m dedicated to crafting visuals that resonate.
+                <br><br>
+                When I&apos;m not behind the camera, you can find me at strongman competitions, discovering new music, or simply getting lost in a good movie. These experiences fuel my creativity and inspire my photography. I&apos;m constantly seeking the extraordinary in the everyday, and I can&apos;t wait to collaborate with you to create something truly remarkable.
+                <br><br>
+                So, if you&apos;re ready to step outside the box and capture moments that reflect your true essence, let&apos;s connect and embark on a photographic adventure unlike any other. Let&apos;s create art that speaks volumes and captures the essence of who you are.
+                <br><br>
+                Stay unique,
+                <br>Lezli
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{fragments/footer}"></footer>
 </body>
 </html>

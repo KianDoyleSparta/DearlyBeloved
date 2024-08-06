@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+<nav th:replace="~{fragments/nav}"></nav>
+
+<div th:replace="~{fragments/background}"></div>
+
+<div id="content-2" class="container my-5">
+    <div class="contact-form-wrapper">
+        <form th:action="@{/contact}" method="POST" name="contact-form" id="contact-form">
+            <div class="form-group">
+                <label for="name-input" class="contact-input-label">FULL NAME</label>
+                <input type="text" id="name-input" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email-input" class="contact-input-label">EMAIL ADDRESS</label>
+                <input type="email" id="email-input" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-input" class="contact-input-label">PHONE NUMBER</label>
+                <input type="text" id="phone-input" class="form-control" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="text-input" class="contact-input-label">ENQUIRY DETAILS</label>
+                <textarea id="text-input" class="form-control" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" id="submit" class="btn btn-custom">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer th:replace="~{fragments/footer}"></footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

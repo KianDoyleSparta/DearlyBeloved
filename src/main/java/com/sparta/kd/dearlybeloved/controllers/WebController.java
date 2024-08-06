@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class WebController {
@@ -31,6 +32,17 @@ public class WebController {
         return "about";
     }
 
+    @GetMapping("/contact")
+    public String getContactPage() {
+        return "contact";
+    }
+
+    @PostMapping("/contact")
+    public String postContactPage(@RequestBody String name, @RequestBody String email, @RequestBody String phone, @RequestBody String message) {
+
+        return "contact";
+    }
+
     @GetMapping("/book")
     public String getBookPage() {
         return "book";
@@ -39,15 +51,5 @@ public class WebController {
     @GetMapping("/partners")
     public String getPartnersPage() {
         return "partners";
-    }
-
-    @GetMapping("/admin")
-    public String getAdminPage() {
-        return "admin";
-    }
-
-    @PostMapping("/admin")
-    public String postAdminPage() {
-        return "admin";
     }
 }

@@ -6,7 +6,10 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import net.coobird.thumbnailator.Thumbnails;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -22,11 +25,12 @@ public class DropBoxService {
     private static DbxRequestConfig config;
     private static DbxClientV2 client;
 
-    private static ArrayList<String> images = new ArrayList<>();
+    private static ArrayList<String> images;
 
     public void config() {
         config = DbxRequestConfig.newBuilder("DearlyBelovedTest").build();
         client = new DbxClientV2(config, token);
+        images = new ArrayList<>();
     }
 
     public boolean isImageFile(String filename) {
@@ -42,6 +46,7 @@ public class DropBoxService {
             while ((bytesRead = in.read(buffer)) != -1) {
                 out.write(buffer, 0, bytesRead);
             }
+            
             return Base64.getEncoder().encodeToString(out.toByteArray());
         } catch (Exception e) {
             e.printStackTrace();
