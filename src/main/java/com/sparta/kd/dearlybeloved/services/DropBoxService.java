@@ -21,7 +21,7 @@ public class DropBoxService {
     private static DbxRequestConfig config;
     private static DbxClientV2 client;
 
-    private static ArrayList<String> images;
+    private static ArrayList<String> images = new ArrayList<>();
 
     public void config() {
         config = DbxRequestConfig.newBuilder("DearlyBelovedTest").build();
@@ -51,6 +51,10 @@ public class DropBoxService {
     }
 
     public List<String> getImages(String folderPath) {
+
+        if (!images.isEmpty()) {
+            return images;
+        }
 
         config();
 
